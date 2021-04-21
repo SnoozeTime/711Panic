@@ -1,17 +1,20 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Src/ItemCrate.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/2d/big_onigiri.png" type="Texture" id=2]
 
 [sub_resource type="SpatialMaterial" id=1]
-albedo_color = Color( 1, 0, 0, 1 )
+albedo_color = Color( 0.0352941, 0.364706, 0, 1 )
 
-[sub_resource type="BoxShape" id=2]
+[sub_resource type="SpatialMaterial" id=2]
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="BoxShape" id=3]
 extents = Vector3( 0.5, 0.5, 0.5 )
 
 [node name="MeatCrate" instance=ExtResource( 1 )]
 material/0 = SubResource( 1 )
+material/1 = SubResource( 2 )
 
-[node name="StaticBody" type="StaticBody" parent="." index="2"]
-
-[node name="CollisionShape" type="CollisionShape" parent="StaticBody" index="0"]
-shape = SubResource( 2 )
+[node name="CollisionShape" parent="StaticBody" index="0"]
+shape = SubResource( 3 )

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Pleasant Creek Loop.wav-9ac14692c05064d3ff5d46643bff3abf.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/Pleasant Creek Loop.wav"
+dest_files=[ "res://.import/Pleasant Creek Loop.wav-9ac14692c05064d3ff5d46643bff3abf.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

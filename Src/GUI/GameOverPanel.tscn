@@ -1,0 +1,133 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/GUI/TitleFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Src/GUI/GameOverPanel.gd" type="Script" id=2]
+[ext_resource path="res://Assets/GUI/DefaultTheme.tres" type="Theme" id=3]
+[ext_resource path="res://Assets/2d/goldmedal.png" type="Texture" id=4]
+[ext_resource path="res://Assets/GUI/Bangers/Bangers-Regular.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 31
+font_data = ExtResource( 5 )
+
+[node name="GameOverPanel" type="Control"]
+anchor_left = 0.11
+anchor_top = 0.15
+anchor_right = 0.873
+anchor_bottom = 0.829
+margin_left = 0.199997
+margin_top = -7.62939e-06
+margin_right = 0.559937
+margin_bottom = 0.119934
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 50.0
+margin_top = 50.0
+margin_right = -50.0
+margin_bottom = -50.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
+margin_right = 877.0
+margin_bottom = 388.0
+
+[node name="TitleLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+margin_right = 877.0
+margin_bottom = 69.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Time's up !!"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
+margin_top = 73.0
+margin_right = 877.0
+margin_bottom = 201.0
+
+[node name="Medal" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer2"]
+margin_right = 128.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 128, 128 )
+texture = ExtResource( 4 )
+expand = true
+
+[node name="ScoreLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 132.0
+margin_top = 50.0
+margin_right = 230.0
+margin_bottom = 77.0
+theme = ExtResource( 3 )
+text = "You scored"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
+margin_top = 205.0
+margin_right = 877.0
+margin_bottom = 239.0
+
+[node name="BestScoreLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer3"]
+margin_top = 3.0
+margin_right = 103.0
+margin_bottom = 30.0
+text = "Best score: "
+
+[node name="NextRecordLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer3"]
+modulate = Color( 1, 0, 0, 1 )
+margin_left = 107.0
+margin_right = 235.0
+margin_bottom = 34.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "New Best !!!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
+margin_top = 275.0
+margin_right = 877.0
+margin_bottom = 388.0
+size_flags_vertical = 10
+
+[node name="NextLevelButton" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 826.0
+margin_right = 877.0
+margin_bottom = 35.0
+size_flags_horizontal = 10
+text = "Next"
+
+[node name="RetryButton" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 814.0
+margin_top = 39.0
+margin_right = 877.0
+margin_bottom = 74.0
+size_flags_horizontal = 10
+text = "Retry"
+
+[node name="ReturnToMenuButton" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 819.0
+margin_top = 78.0
+margin_right = 877.0
+margin_bottom = 113.0
+size_flags_horizontal = 8
+text = "Menu"
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/NextLevelButton" to="." method="_on_NextLevelButton_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/RetryButton" to="." method="_on_RetryButton_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/ReturnToMenuButton" to="." method="_on_ReturnToMenuButton_pressed"]

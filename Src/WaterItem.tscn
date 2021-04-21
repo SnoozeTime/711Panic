@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Src/Item.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/meshes/bottle.obj" type="ArrayMesh" id=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.141176, 0.737255, 0.945098, 1 )
+
+[sub_resource type="SpatialMaterial" id=2]
+
+[node name="WaterItem" instance=ExtResource( 1 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.666205, 0 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 1 )
+material/1 = SubResource( 2 )
+item_type = 2

@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/cashier.obj-5b788d18a9735c6576e7264a8310bace.mesh"
+
+[deps]
+
+files=[ "res://.import/cashier.obj-5b788d18a9735c6576e7264a8310bace.mesh" ]
+
+source_file="res://Assets/meshes/cashier.obj"
+dest_files=[ "res://.import/cashier.obj-5b788d18a9735c6576e7264a8310bace.mesh", "res://.import/cashier.obj-5b788d18a9735c6576e7264a8310bace.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

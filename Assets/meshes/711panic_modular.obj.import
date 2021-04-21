@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/711panic_modular.obj-17a0f46b9d66b4b052e80e3974e67047.mesh"
+
+[deps]
+
+files=[ "res://.import/711panic_modular.obj-17a0f46b9d66b4b052e80e3974e67047.mesh" ]
+
+source_file="res://Assets/meshes/711panic_modular.obj"
+dest_files=[ "res://.import/711panic_modular.obj-17a0f46b9d66b4b052e80e3974e67047.mesh", "res://.import/711panic_modular.obj-17a0f46b9d66b4b052e80e3974e67047.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

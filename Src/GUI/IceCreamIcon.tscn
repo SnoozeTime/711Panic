@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/2d/icecream_icon.png" type="Texture" id=1]
+[ext_resource path="res://Src/GUI/ItemIcon.tscn" type="PackedScene" id=2]
+
+[node name="ItemIcon" instance=ExtResource( 2 )]
+texture = ExtResource( 1 )

@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/magazine.obj-07f82b9b9cb02649c296eaecd3e26b47.mesh"
+
+[deps]
+
+files=[ "res://.import/magazine.obj-07f82b9b9cb02649c296eaecd3e26b47.mesh" ]
+
+source_file="res://Assets/meshes/magazine.obj"
+dest_files=[ "res://.import/magazine.obj-07f82b9b9cb02649c296eaecd3e26b47.mesh", "res://.import/magazine.obj-07f82b9b9cb02649c296eaecd3e26b47.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

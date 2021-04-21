@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/pay_finished.ogg-dc8f129b5bf52bbe3586ce57fea8e130.oggstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Sounds/pay_finished.ogg"
+dest_files=[ "res://.import/pay_finished.ogg-dc8f129b5bf52bbe3586ce57fea8e130.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/icecream_shelf.obj-d5f4c41abbc952ccdef39f48259c11f1.mesh"
+
+[deps]
+
+files=[ "res://.import/icecream_shelf.obj-d5f4c41abbc952ccdef39f48259c11f1.mesh" ]
+
+source_file="res://Assets/meshes/icecream_shelf.obj"
+dest_files=[ "res://.import/icecream_shelf.obj-d5f4c41abbc952ccdef39f48259c11f1.mesh", "res://.import/icecream_shelf.obj-d5f4c41abbc952ccdef39f48259c11f1.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

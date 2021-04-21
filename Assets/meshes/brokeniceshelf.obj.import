@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/brokeniceshelf.obj-deff89537daa0f83d3179ffa37d14728.mesh"
+
+[deps]
+
+files=[ "res://.import/brokeniceshelf.obj-deff89537daa0f83d3179ffa37d14728.mesh" ]
+
+source_file="res://Assets/meshes/brokeniceshelf.obj"
+dest_files=[ "res://.import/brokeniceshelf.obj-deff89537daa0f83d3179ffa37d14728.mesh", "res://.import/brokeniceshelf.obj-deff89537daa0f83d3179ffa37d14728.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

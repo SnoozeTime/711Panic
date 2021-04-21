@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/hair2.obj-225fcc2c4916616d4e199c5c02e4cc77.mesh"
+
+[deps]
+
+files=[ "res://.import/hair2.obj-225fcc2c4916616d4e199c5c02e4cc77.mesh" ]
+
+source_file="res://Assets/meshes/hair2.obj"
+dest_files=[ "res://.import/hair2.obj-225fcc2c4916616d4e199c5c02e4cc77.mesh", "res://.import/hair2.obj-225fcc2c4916616d4e199c5c02e4cc77.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

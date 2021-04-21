@@ -22,11 +22,12 @@ func compute_path(pos):
 	path = owner.navigation.get_simple_path(owner.global_transform.origin, pos)
 	path_idx = 0
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func physics_update(delta: float) -> void:
+	var dir = get_direction()
+
+	if dir.x != 0.0 or dir.z != 0.0:
+		owner.look_at(owner.global_transform.origin +Vector3(dir.x, 0.0, dir.z), Vector3.UP)
+	
+	owner.velocity = owner.velocity.linear_interpolate(dir * owner.speed, delta * 10.0)

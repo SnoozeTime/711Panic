@@ -1,0 +1,16 @@
+# Blender v2.92.0 OBJ File: '711panic_modular.blend'
+# www.blender.org
+mtllib 711panic_modular.mtl
+o Ground_Plane
+v -1.000000 0.000000 1.000000
+v 1.000000 0.000000 1.000000
+v -1.000000 0.000000 -1.000000
+v 1.000000 0.000000 -1.000000
+vt 0.000000 0.000000
+vt 1.000000 0.000000
+vt 1.000000 1.000000
+vt 0.000000 1.000000
+vn 0.0000 1.0000 0.0000
+usemtl GroundMat
+s off
+f 1/1/1 2/2/1 4/3/1 3/4/1

@@ -1,36 +1,34 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Src/Customer.gd" type="Script" id=1]
 [ext_resource path="res://Src/FSM/StateMachine.gd" type="Script" id=2]
 [ext_resource path="res://Src/Customer/Fetching.gd" type="Script" id=3]
 [ext_resource path="res://Src/Customer/Paying.gd" type="Script" id=4]
 [ext_resource path="res://Src/Customer/LeaveShop.gd" type="Script" id=5]
+[ext_resource path="res://Src/Customer/EnterShop.gd" type="Script" id=6]
+[ext_resource path="res://Src/Customer/AngryLeaveShop.gd" type="Script" id=7]
+[ext_resource path="res://Src/Customer/Disappear.gd" type="Script" id=8]
+[ext_resource path="res://Src/Characters/obasan.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Src/Characters/BigBoyCharacter.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Src/Characters/RandomCharacter.tscn" type="PackedScene" id=11]
 
-[sub_resource type="CapsuleMesh" id=1]
-
-[sub_resource type="SpatialMaterial" id=2]
-albedo_color = Color( 0.745098, 0.333333, 1, 1 )
-
-[sub_resource type="CapsuleShape" id=3]
+[sub_resource type="CapsuleShape" id=1]
 
 [node name="Customer" type="KinematicBody"]
 script = ExtResource( 1 )
 
-[node name="MeshInstance" type="MeshInstance" parent="."]
-transform = Transform( 0.5, 0, 0, 0, -8.14603e-08, -0.5, 0, 0.5, -8.14603e-08, 0, 0, 0 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 2 )
-
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 0.5, 0, 0, 0, -8.14603e-08, -0.5, 0, 0.5, -8.14603e-08, 0, 0, 0 )
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="ComputePathTimer" type="Timer" parent="."]
-autostart = true
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource( 2 )
-initial_state = NodePath("Fetching")
+initial_state = NodePath("EnterShop")
+
+[node name="EnterShop" type="Node" parent="StateMachine"]
+script = ExtResource( 6 )
 
 [node name="Fetching" type="Node" parent="StateMachine"]
 script = ExtResource( 3 )
@@ -40,4 +38,22 @@ script = ExtResource( 4 )
 
 [node name="LeaveShop" type="Node" parent="StateMachine"]
 script = ExtResource( 5 )
+
+[node name="AngryLeaveShop" type="Node" parent="StateMachine"]
+script = ExtResource( 7 )
+
+[node name="Disappear" type="Node" parent="StateMachine"]
+script = ExtResource( 8 )
+
+[node name="obasan" parent="." instance=ExtResource( 9 )]
+transform = Transform( -0.6, 0, -1.95505e-07, 0, 0.6, 0, 1.95505e-07, 0, -0.6, 0, 0, 0 )
+
+[node name="BigBoyCharacter" parent="." instance=ExtResource( 10 )]
+transform = Transform( -0.8, 0, -2.60673e-07, 0, 0.8, 0, 2.60673e-07, 0, -0.8, 0, 0, 0 )
+visible = false
+
+[node name="RandomCharacter" parent="." instance=ExtResource( 11 )]
+transform = Transform( -0.7, 0, -2.28089e-07, 0, 0.7, 0, 2.28089e-07, 0, -0.7, 0, 0, 0 )
+visible = false
 [connection signal="timeout" from="ComputePathTimer" to="StateMachine/Fetching" method="_on_ComputePathTimer_timeout"]
+[connection signal="transitioned" from="StateMachine" to="." method="_on_StateMachine_transitioned"]

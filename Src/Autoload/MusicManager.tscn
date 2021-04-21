@@ -1,0 +1,93 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Assets/Audio/Music/Caketown 1.wav" type="AudioStream" id=1]
+[ext_resource path="res://Src/Autoload/MusicManager.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Audio/Music/Enchanted Festival Loop.wav" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Audio/Music/Woodland Fantasy.wav" type="AudioStream" id=4]
+[ext_resource path="res://Assets/Audio/Music/Lively Meadow.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Audio/Music/Pleasant Creek Loop.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Audio/Sounds/button_hover.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Audio/Sounds/button_click.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Assets/Audio/Sounds/checkbox.ogg" type="AudioStream" id=9]
+[ext_resource path="res://Assets/Audio/Sounds/place_item.ogg" type="AudioStream" id=10]
+[ext_resource path="res://Assets/Audio/Sounds/pay_finished.ogg" type="AudioStream" id=11]
+[ext_resource path="res://Assets/Audio/Sounds/dash.wav" type="AudioStream" id=12]
+[ext_resource path="res://Assets/Audio/Sounds/victory.wav" type="AudioStream" id=13]
+[ext_resource path="res://Assets/Audio/Sounds/angry.wav" type="AudioStream" id=14]
+[ext_resource path="res://Assets/Audio/Sounds/obasan.wav" type="AudioStream" id=15]
+[ext_resource path="res://Assets/Audio/Sounds/random.wav" type="AudioStream" id=16]
+[ext_resource path="res://Assets/Audio/Sounds/break.wav" type="AudioStream" id=17]
+[ext_resource path="res://Assets/Audio/Sounds/repare.wav" type="AudioStream" id=18]
+
+[node name="MusicManager" type="Node"]
+script = ExtResource( 2 )
+
+[node name="Background" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+bus = "Background"
+
+[node name="Level1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+bus = "Background"
+
+[node name="Level2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+bus = "Background"
+
+[node name="Level3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+bus = "Background"
+
+[node name="Level4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+bus = "Background"
+
+[node name="InterfaceEffects" type="Node" parent="."]
+
+[node name="ButtonHover" type="AudioStreamPlayer" parent="InterfaceEffects"]
+stream = ExtResource( 7 )
+bus = "Sound"
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="InterfaceEffects"]
+stream = ExtResource( 8 )
+bus = "Sound"
+
+[node name="CheckboxToggle" type="AudioStreamPlayer" parent="InterfaceEffects"]
+stream = ExtResource( 9 )
+bus = "Sound"
+
+[node name="Item" type="AudioStreamPlayer" parent="InterfaceEffects"]
+stream = ExtResource( 10 )
+bus = "Sound"
+
+[node name="Pay" type="AudioStreamPlayer" parent="InterfaceEffects"]
+stream = ExtResource( 11 )
+bus = "Sound"
+
+[node name="Dash" type="AudioStreamPlayer" parent="InterfaceEffects"]
+stream = ExtResource( 12 )
+bus = "Sound"
+
+[node name="Victory" type="AudioStreamPlayer" parent="InterfaceEffects"]
+stream = ExtResource( 13 )
+bus = "Sound"
+
+[node name="Angry" type="AudioStreamPlayer" parent="InterfaceEffects"]
+stream = ExtResource( 14 )
+bus = "Sound"
+
+[node name="Obasan" type="AudioStreamPlayer" parent="InterfaceEffects"]
+stream = ExtResource( 15 )
+bus = "Sound"
+
+[node name="Random" type="AudioStreamPlayer" parent="InterfaceEffects"]
+stream = ExtResource( 16 )
+bus = "Sound"
+
+[node name="Break" type="AudioStreamPlayer" parent="InterfaceEffects"]
+stream = ExtResource( 17 )
+bus = "Sound"
+
+[node name="Repare" type="AudioStreamPlayer" parent="InterfaceEffects"]
+stream = ExtResource( 18 )
+bus = "Sound"

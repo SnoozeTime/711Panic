@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/table_checkout.obj-b0ad7b8836103f4bb5d487759aecadfb.mesh"
+
+[deps]
+
+files=[ "res://.import/table_checkout.obj-b0ad7b8836103f4bb5d487759aecadfb.mesh" ]
+
+source_file="res://Assets/meshes/table_checkout.obj"
+dest_files=[ "res://.import/table_checkout.obj-b0ad7b8836103f4bb5d487759aecadfb.mesh", "res://.import/table_checkout.obj-b0ad7b8836103f4bb5d487759aecadfb.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

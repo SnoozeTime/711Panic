@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Src/Item.tscn" type="PackedScene" id=1]
-
-[sub_resource type="SpatialMaterial" id=1]
-albedo_color = Color( 0.976471, 0, 0, 1 )
+[ext_resource path="res://Assets/meshes/onigiri.obj" type="ArrayMesh" id=2]
 
 [node name="MeatItem" instance=ExtResource( 1 )]
-material/0 = SubResource( 1 )
+transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, -0.00136089 )
+mesh = ExtResource( 2 )
+material/1 = null

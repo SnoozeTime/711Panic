@@ -1,0 +1,903 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://Assets/2d/wall_texture.png" type="Texture" id=1]
+[ext_resource path="res://Src/Level/Level.gd" type="Script" id=2]
+[ext_resource path="res://Src/RamenCrate.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Src/Shelf.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Src/Level/WallCorner.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Src/Garbage.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Src/Cashier.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Src/MeatCrate.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Src/Queue.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Src/Level/TableCheckoutMiddle.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Src/Level/FloorTile.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Src/Level/Wall.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Src/WaterCrate.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Src/Level/tree1.tscn" type="PackedScene" id=14]
+
+[sub_resource type="NavigationMesh" id=1]
+vertices = PoolVector3Array( -10.02, 0.298475, -1.16, -9.76, 0.298475, -0.640001, -7.68, 0.298475, -0.640001, -7.42, 0.298475, -2.2, -10.28, 0.298475, -5.06, -10.54, 0.298475, -6.36, -12.36, 0.298475, -6.36, -12.36, 0.298475, -0.900001, -10.02, 0.298475, -1.16, -7.42, 0.298475, -2.2, -5.86, 0.298475, -5.06, -10.28, 0.298475, -5.06, -10.02, 0.298475, -1.16, -7.42, 0.298475, -2.2, -5.6, 0.298475, -2.2, -5.86, 0.298475, -5.06, -4.3, 0.298475, -5.06, -5.86, 0.298475, -5.06, -5.6, 0.298475, -2.2, 3.24, 0.298475, -2.2, 12.34, 0.298475, -2.2, 12.34, 0.298475, -6.36, 4.02, 0.298475, -6.36, 3.24, 0.298475, -2.2, -4.04, 0.298475, -6.36, -4.3, 0.298475, -5.06, 3.24, 0.298475, -2.2, 4.02, 0.298475, -6.36, 2.72, 1.29847, -1.16, -6.64, 1.29847, -1.16, 2.46, 1.29847, -0.900001, 11.82, 1.29847, -0.900001, 12.34, 1.49847, 9.76, 12.34, 1.29847, -1.16, 11.82, 1.29847, -0.900001, 12.34, 1.29847, -1.16, 2.72, 1.29847, -1.16, 2.46, 1.29847, -0.900001, -7.42, 0.298475, 0.139999, -7.68, 0.298475, -0.640001, -9.76, 0.298475, -0.640001, -6.64, 0.298475, 6.64, -4.3, 0.298475, 6.38, -4.3, 0.298475, 5.6, -6.64, 0.298475, 5.34, -9.76, 0.298475, 10.54, -6.64, 0.298475, 9.5, -6.64, 0.298475, 6.64, -6.64, 0.898475, 8.07, -9.76, 0.298475, 10.54, -12.36, 0.298475, 10.54, -12.36, 0.298475, 12.36, -6.64, 0.298475, 2.48, -4.3, 0.298475, 2.22, -4.3, 0.298475, 0.139999, -7.42, 0.298475, 0.139999, -9.76, 0.298475, 10.54, -6.64, 0.298475, 6.64, -6.64, 0.298475, 5.34, -4.3, 0.298475, 12.36, -4.3, 0.298475, 9.76, -6.64, 0.298475, 9.5, -9.76, 0.298475, 10.54, -12.36, 0.298475, 12.36, -6.64, 0.298475, 2.48, -7.42, 0.298475, 0.139999, -9.76, 0.298475, -0.640001, -9.76, 0.298475, 10.54, -6.64, 0.298475, 5.34, -6.64, 0.898475, 3.91, -11.32, 1.49847, -0.120001, -11.32, 1.49847, 9.76, -10.8, 1.49847, 9.76, -10.8, 1.49847, -0.120001, -2.22, 0.298475, 5.34, -4.3, 0.298475, 5.6, -4.3, 0.298475, 6.38, -2.22, 0.298475, 6.64, 2.2, 0.298475, 6.64, 2.2, 0.298475, 5.34, 2.2, 0.298475, 5.34, 2.2, 0.298475, 2.48, -2.22, 0.298475, 2.48, -2.22, 0.298475, 5.34, 2.2, 0.298475, 6.64, 4.54, 0.298475, 6.38, 4.54, 0.298475, 5.6, 2.2, 0.298475, 5.34, -2.22, 0.298475, 6.64, -2.22, 0.298475, 9.5, 2.2, 0.298475, 9.5, 2.2, 0.298475, 6.64, 2.98, 0.298475, 12.36, 2.98, 0.298475, 9.76, 2.2, 0.298475, 9.5, -2.22, 0.298475, 9.5, -4.3, 0.298475, 9.76, -4.3, 0.298475, 12.36, -4.3, 0.298475, 0.139999, -4.3, 0.298475, 2.22, -2.22, 0.298475, 2.48, 2.2, 0.298475, 2.48, 4.54, 0.298475, 2.22, 4.54, 0.298475, 0.139999, 12.34, 0.298475, 12.36, 12.34, 0.298475, 10.8, 11.04, 0.298475, 10.54, 6.88, 0.298475, 5.34, 4.54, 0.298475, 5.6, 4.54, 0.298475, 6.38, 6.88, 0.298475, 6.64, 6.88, 0.298475, 2.48, 6.88, 0.298475, 5.34, 11.04, 0.298475, 0.139999, 4.54, 0.298475, 0.139999, 4.54, 0.298475, 2.22, 6.88, 0.298475, 2.48, 11.04, 0.298475, 0.139999, 7.4, 0.298475, 12.36, 12.34, 0.298475, 12.36, 11.04, 0.298475, 10.54, 6.88, 0.298475, 6.64, 6.88, 0.298475, 9.24, 6.88, 0.298475, 5.34, 6.88, 0.298475, 6.64, 11.04, 0.298475, 10.54, 11.04, 0.298475, 0.139999, 7.4, 0.298475, 12.36, 6.88, 0.298475, 9.24, 6.62, 0.298475, 9.76, 6.36, 0.298475, 12.62, 7.4, 0.298475, 12.36, 6.62, 0.298475, 9.76, 2.98, 0.298475, 9.76, 2.98, 0.298475, 12.36, 3.76, 0.298475, 12.62, 12.6, 0.298475, 16.52, 12.6, 0.298475, 14.18, 6.62, 0.298475, 14.18, 2.2, 0.298475, 16.52, 3.76, 0.298475, 13.92, 1.68, 0.298475, 14.18, 2.2, 0.298475, 16.52, 6.62, 0.298475, 14.18, 3.76, 0.298475, 13.92, 6.62, 0.298475, 14.18, 6.36, 0.298475, 12.62, 3.76, 0.298475, 12.62, -5.6, 0.298475, 14.18, -12.62, 0.298475, 14.18, -12.62, 0.298475, 16.52, -5.34, 0.298475, 16.52, -5.34, 0.298475, 16.52, 2.2, 0.298475, 16.52, 1.68, 0.298475, 14.18, -5.6, 0.298475, 14.18 )
+polygons = [ PoolIntArray( 1, 0, 2 ), PoolIntArray( 2, 0, 3 ), PoolIntArray( 5, 4, 6 ), PoolIntArray( 6, 4, 8 ), PoolIntArray( 6, 8, 7 ), PoolIntArray( 12, 11, 9 ), PoolIntArray( 9, 11, 10 ), PoolIntArray( 15, 14, 13 ), PoolIntArray( 17, 16, 18 ), PoolIntArray( 18, 16, 19 ), PoolIntArray( 21, 20, 22 ), PoolIntArray( 22, 20, 23 ), PoolIntArray( 25, 24, 26 ), PoolIntArray( 26, 24, 27 ), PoolIntArray( 30, 29, 28 ), PoolIntArray( 33, 32, 31 ), PoolIntArray( 37, 36, 34 ), PoolIntArray( 34, 36, 35 ), PoolIntArray( 40, 39, 38 ), PoolIntArray( 42, 41, 43 ), PoolIntArray( 43, 41, 44 ), PoolIntArray( 46, 45, 48 ), PoolIntArray( 48, 45, 47 ), PoolIntArray( 51, 50, 49 ), PoolIntArray( 53, 52, 54 ), PoolIntArray( 54, 52, 55 ), PoolIntArray( 58, 57, 56 ), PoolIntArray( 60, 59, 61 ), PoolIntArray( 61, 59, 62 ), PoolIntArray( 62, 59, 63 ), PoolIntArray( 64, 69, 65 ), PoolIntArray( 65, 69, 68 ), PoolIntArray( 65, 68, 66 ), PoolIntArray( 66, 68, 67 ), PoolIntArray( 73, 72, 70 ), PoolIntArray( 70, 72, 71 ), PoolIntArray( 76, 75, 77 ), PoolIntArray( 77, 75, 74 ), PoolIntArray( 77, 74, 79 ), PoolIntArray( 77, 79, 78 ), PoolIntArray( 83, 82, 80 ), PoolIntArray( 80, 82, 81 ), PoolIntArray( 85, 84, 86 ), PoolIntArray( 86, 84, 87 ), PoolIntArray( 91, 90, 88 ), PoolIntArray( 88, 90, 89 ), PoolIntArray( 93, 92, 94 ), PoolIntArray( 94, 92, 95 ), PoolIntArray( 95, 92, 96 ), PoolIntArray( 96, 92, 97 ), PoolIntArray( 99, 98, 100 ), PoolIntArray( 100, 98, 101 ), PoolIntArray( 101, 98, 102 ), PoolIntArray( 102, 98, 103 ), PoolIntArray( 106, 105, 104 ), PoolIntArray( 109, 108, 110 ), PoolIntArray( 110, 108, 107 ), PoolIntArray( 112, 111, 113 ), PoolIntArray( 115, 114, 116 ), PoolIntArray( 116, 114, 117 ), PoolIntArray( 119, 118, 120 ), PoolIntArray( 120, 118, 122 ), PoolIntArray( 120, 122, 121 ), PoolIntArray( 124, 123, 125 ), PoolIntArray( 125, 123, 126 ), PoolIntArray( 129, 128, 127 ), PoolIntArray( 134, 133, 135 ), PoolIntArray( 135, 133, 130 ), PoolIntArray( 130, 133, 131 ), PoolIntArray( 131, 133, 132 ), PoolIntArray( 137, 136, 138 ), PoolIntArray( 138, 136, 139 ), PoolIntArray( 141, 140, 142 ), PoolIntArray( 142, 140, 143 ), PoolIntArray( 147, 146, 144 ), PoolIntArray( 144, 146, 145 ), PoolIntArray( 149, 148, 150 ), PoolIntArray( 150, 148, 151 ), PoolIntArray( 155, 154, 152 ), PoolIntArray( 152, 154, 153 ) ]
+cell/size = 0.26
+agent/radius = 0.5
+
+[sub_resource type="SpatialMaterial" id=2]
+params_cull_mode = 2
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="PlaneMesh" id=7]
+
+[sub_resource type="SpatialMaterial" id=8]
+albedo_color = Color( 0.0509804, 0.486275, 0.0352941, 1 )
+
+[node name="Level2" type="Spatial"]
+script = ExtResource( 2 )
+available_items = [ 0, 1, 2 ]
+max_item_per_customer = 3
+
+[node name="CustomerSpawn" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1772, 1.00377, 14.9514 )
+
+[node name="Navigation" type="Navigation" parent="."]
+
+[node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="Navigation"]
+navmesh = SubResource( 1 )
+
+[node name="Terrain" type="Spatial" parent="Navigation/NavigationMeshInstance"]
+
+[node name="CSGCombiner" type="CSGCombiner" parent="Navigation/NavigationMeshInstance/Terrain"]
+use_collision = true
+
+[node name="IceCream" type="CSGBox" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0805, -0.23818, 4.7558 )
+width = 1.43829
+height = 2.92669
+depth = 10.7786
+
+[node name="IceCream2" type="CSGBox" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5137, -0.23818, 4.7558 )
+width = 1.43829
+height = 2.92669
+depth = 10.7786
+
+[node name="Ground" type="CSGCombiner" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner"]
+
+[node name="FloorTile" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+
+[node name="FloorTile8" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2.00544 )
+
+[node name="FloorTile9" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 2.00544 )
+
+[node name="FloorTile10" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 2.00544 )
+
+[node name="FloorTile11" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 2.00544 )
+
+[node name="FloorTile12" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 2.00544 )
+
+[node name="FloorTile13" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 2.00544 )
+
+[node name="FloorTile2" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2.00544 )
+
+[node name="FloorTile3" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 2.00544 )
+
+[node name="FloorTile4" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 2.00544 )
+
+[node name="FloorTile5" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 2.00544 )
+
+[node name="FloorTile6" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 2.00544 )
+
+[node name="FloorTile7" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 2.00544 )
+
+[node name="FloorTile14" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.00544 )
+
+[node name="FloorTile15" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0.00544 )
+
+[node name="FloorTile16" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0.00544 )
+
+[node name="FloorTile17" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0.00544 )
+
+[node name="FloorTile18" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0.00544 )
+
+[node name="FloorTile19" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0.00544 )
+
+[node name="FloorTile20" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 0.00544 )
+
+[node name="FloorTile21" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0.00544 )
+
+[node name="FloorTile22" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0.00544 )
+
+[node name="FloorTile23" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0.00544 )
+
+[node name="FloorTile24" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0.00544 )
+
+[node name="FloorTile25" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0.00544 )
+
+[node name="FloorTile26" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0.00544 )
+
+[node name="FloorTile27" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.99456 )
+
+[node name="FloorTile28" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -1.99456 )
+
+[node name="FloorTile29" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -1.99456 )
+
+[node name="FloorTile30" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -1.99456 )
+
+[node name="FloorTile31" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -1.99456 )
+
+[node name="FloorTile32" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -1.99456 )
+
+[node name="FloorTile33" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -1.99456 )
+
+[node name="FloorTile34" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -1.99456 )
+
+[node name="FloorTile35" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -1.99456 )
+
+[node name="FloorTile36" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -1.99456 )
+
+[node name="FloorTile37" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -1.99456 )
+
+[node name="FloorTile38" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -1.99456 )
+
+[node name="FloorTile39" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -1.99456 )
+
+[node name="FloorTile40" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.99456 )
+
+[node name="FloorTile41" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -3.99456 )
+
+[node name="FloorTile42" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -3.99456 )
+
+[node name="FloorTile43" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -3.99456 )
+
+[node name="FloorTile44" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -3.99456 )
+
+[node name="FloorTile45" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -3.99456 )
+
+[node name="FloorTile46" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -3.99456 )
+
+[node name="FloorTile47" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -3.99456 )
+
+[node name="FloorTile48" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -3.99456 )
+
+[node name="FloorTile49" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -3.99456 )
+
+[node name="FloorTile50" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -3.99456 )
+
+[node name="FloorTile51" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -3.99456 )
+
+[node name="FloorTile52" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -3.99456 )
+
+[node name="FloorTile53" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.99456 )
+
+[node name="FloorTile54" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -5.99456 )
+
+[node name="FloorTile55" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -5.99456 )
+
+[node name="FloorTile56" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -5.99456 )
+
+[node name="FloorTile57" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -5.99456 )
+
+[node name="FloorTile58" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -5.99456 )
+
+[node name="FloorTile59" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -5.99456 )
+
+[node name="FloorTile60" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -5.99456 )
+
+[node name="FloorTile61" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -5.99456 )
+
+[node name="FloorTile62" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -5.99456 )
+
+[node name="FloorTile63" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -5.99456 )
+
+[node name="FloorTile64" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -5.99456 )
+
+[node name="FloorTile65" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -5.99456 )
+
+[node name="FloorTile66" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.00544 )
+
+[node name="FloorTile67" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 4.00544 )
+
+[node name="FloorTile68" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4.00544 )
+
+[node name="FloorTile69" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 4.00544 )
+
+[node name="FloorTile70" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 4.00544 )
+
+[node name="FloorTile71" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 4.00544 )
+
+[node name="FloorTile72" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 4.00544 )
+
+[node name="FloorTile73" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 4.00544 )
+
+[node name="FloorTile74" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4.00544 )
+
+[node name="FloorTile75" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 4.00544 )
+
+[node name="FloorTile76" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 4.00544 )
+
+[node name="FloorTile77" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 4.00544 )
+
+[node name="FloorTile78" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 4.00544 )
+
+[node name="FloorTile79" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.00544 )
+
+[node name="FloorTile80" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 6.00544 )
+
+[node name="FloorTile81" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 6.00544 )
+
+[node name="FloorTile82" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 6.00544 )
+
+[node name="FloorTile83" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 6.00544 )
+
+[node name="FloorTile84" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 6.00544 )
+
+[node name="FloorTile85" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 6.00544 )
+
+[node name="FloorTile86" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 6.00544 )
+
+[node name="FloorTile87" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 6.00544 )
+
+[node name="FloorTile88" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 6.00544 )
+
+[node name="FloorTile89" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 6.00544 )
+
+[node name="FloorTile90" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 6.00544 )
+
+[node name="FloorTile91" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 6.00544 )
+
+[node name="FloorTile92" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.00544 )
+
+[node name="FloorTile93" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 8.00544 )
+
+[node name="FloorTile94" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 8.00544 )
+
+[node name="FloorTile95" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 8.00544 )
+
+[node name="FloorTile96" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 8.00544 )
+
+[node name="FloorTile97" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 8.00544 )
+
+[node name="FloorTile98" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 8.00544 )
+
+[node name="FloorTile99" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 8.00544 )
+
+[node name="FloorTile100" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8.00544 )
+
+[node name="FloorTile101" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 8.00544 )
+
+[node name="FloorTile102" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 8.00544 )
+
+[node name="FloorTile103" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 8.00544 )
+
+[node name="FloorTile104" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 8.00544 )
+
+[node name="FloorTile105" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.0054 )
+
+[node name="FloorTile106" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 10.0054 )
+
+[node name="FloorTile107" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 10.0054 )
+
+[node name="FloorTile108" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 10.0054 )
+
+[node name="FloorTile109" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 10.0054 )
+
+[node name="FloorTile110" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 10.0054 )
+
+[node name="FloorTile111" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 10.0054 )
+
+[node name="FloorTile112" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 10.0054 )
+
+[node name="FloorTile113" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 10.0054 )
+
+[node name="FloorTile114" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 10.0054 )
+
+[node name="FloorTile115" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 10.0054 )
+
+[node name="FloorTile116" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10.0054 )
+
+[node name="FloorTile117" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 10.0054 )
+
+[node name="FloorTile118" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12.0054 )
+
+[node name="FloorTile119" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 12.0054 )
+
+[node name="FloorTile120" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 12.0054 )
+
+[node name="FloorTile121" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 12.0054 )
+
+[node name="FloorTile122" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 12.0054 )
+
+[node name="FloorTile123" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 12.0054 )
+
+[node name="FloorTile124" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 12.0054 )
+
+[node name="FloorTile125" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 12.0054 )
+
+[node name="FloorTile126" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 12.0054 )
+
+[node name="FloorTile127" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 12.0054 )
+
+[node name="FloorTile128" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 12.0054 )
+
+[node name="FloorTile129" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 12.0054 )
+
+[node name="FloorTile130" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 12.0054 )
+
+[node name="FloorTile131" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 14.0054 )
+
+[node name="FloorTile132" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 14.0054 )
+
+[node name="FloorTile133" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 14.0054 )
+
+[node name="FloorTile134" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 14.0054 )
+
+[node name="FloorTile135" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 14.0054 )
+
+[node name="FloorTile136" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 14.0054 )
+
+[node name="FloorTile137" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 14.0054 )
+
+[node name="FloorTile138" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 14.0054 )
+
+[node name="FloorTile139" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 14.0054 )
+
+[node name="FloorTile140" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 14.0054 )
+
+[node name="FloorTile141" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 14.0054 )
+
+[node name="FloorTile142" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16.0054 )
+
+[node name="FloorTile143" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 16.0054 )
+
+[node name="FloorTile144" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 16.0054 )
+
+[node name="FloorTile145" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 16.0054 )
+
+[node name="FloorTile146" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 16.0054 )
+
+[node name="FloorTile153" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 16.0054 )
+
+[node name="FloorTile154" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 14.0054 )
+
+[node name="FloorTile155" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 14.0054 )
+
+[node name="FloorTile156" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 16.0054 )
+
+[node name="FloorTile147" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 16.0054 )
+
+[node name="FloorTile148" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 16.0054 )
+
+[node name="FloorTile149" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 16.0054 )
+
+[node name="FloorTile150" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 16.0054 )
+
+[node name="FloorTile151" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 16.0054 )
+
+[node name="FloorTile152" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Ground" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 16.0054 )
+
+[node name="Walls" type="CSGCombiner" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner"]
+
+[node name="Wall" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 12 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, -7 )
+material = SubResource( 2 )
+
+[node name="Wall2" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 12 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2, 0, -7 )
+material = SubResource( 2 )
+
+[node name="Wall3" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 12 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4, 0, -7 )
+material = SubResource( 2 )
+
+[node name="Wall4" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 12 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6, 0, -7 )
+material = SubResource( 2 )
+
+[node name="Wall5" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 12 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8, 0, -7 )
+material = SubResource( 2 )
+
+[node name="Wall6" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 12 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10, 0, -7 )
+material = SubResource( 2 )
+
+[node name="Wall7" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 12 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12, 0, -7 )
+material = SubResource( 2 )
+
+[node name="Wall24" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, -6 )
+material = SubResource( 2 )
+
+[node name="Wall25" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, -4 )
+material = SubResource( 2 )
+
+[node name="Wall26" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, -2 )
+material = SubResource( 2 )
+
+[node name="Wall27" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 0 )
+material = SubResource( 2 )
+
+[node name="Wall28" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 2 )
+material = SubResource( 2 )
+
+[node name="Wall29" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 4 )
+material = SubResource( 2 )
+
+[node name="Wall30" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 6 )
+material = SubResource( 2 )
+
+[node name="Wall31" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 8 )
+material = SubResource( 2 )
+
+[node name="Wall32" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 10 )
+material = SubResource( 2 )
+
+[node name="Wall33" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 12 )
+material = SubResource( 2 )
+
+[node name="Wall34" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 12 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12, 0, 13 )
+material = SubResource( 2 )
+
+[node name="Wall35" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 12 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10, 0, 13 )
+material = SubResource( 2 )
+
+[node name="Wall36" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 12 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8, 0, 13 )
+material = SubResource( 2 )
+
+[node name="Wall39" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 12 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2, 0, 13 )
+material = SubResource( 2 )
+
+[node name="Wall40" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 12 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -9.53674e-07, 0, 13 )
+material = SubResource( 2 )
+
+[node name="Wall41" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 12 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, 0, 13 )
+material = SubResource( 2 )
+
+[node name="Wall42" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 12 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4, 0, 13 )
+material = SubResource( 2 )
+
+[node name="Wall43" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 12 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6, 0, 13 )
+material = SubResource( 2 )
+
+[node name="Wall44" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 12 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -12, 0, 13 )
+material = SubResource( 2 )
+
+[node name="Wall45" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 12 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -11, 0, 13 )
+material = SubResource( 2 )
+
+[node name="Wall46" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 12 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8, 0, 13 )
+material = SubResource( 2 )
+
+[node name="Wall48" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 12 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -10, 0, 13 )
+material = SubResource( 2 )
+
+[node name="Wall37" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 12 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12, 0, 13 )
+material = SubResource( 2 )
+
+[node name="Wall8" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 12 )]
+transform = Transform( -2.98023e-08, 0, 1, 0, 1, 0, -1, 0, -2.98023e-08, -2, 0, -7 )
+material = SubResource( 2 )
+
+[node name="Wall9" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 12 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4, 0, -7 )
+material = SubResource( 2 )
+
+[node name="Wall10" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 12 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6, 0, -7 )
+material = SubResource( 2 )
+
+[node name="Wall11" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 12 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, 0, -7 )
+material = SubResource( 2 )
+
+[node name="Wall12" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 12 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10, 0, -7 )
+material = SubResource( 2 )
+
+[node name="Wall13" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 12 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12, 0, -7 )
+material = SubResource( 2 )
+
+[node name="Wall14" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 12 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -13, 0, -6 )
+material = SubResource( 2 )
+
+[node name="Wall38" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 12 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -13, 0, -5 )
+material = SubResource( 2 )
+
+[node name="Wall15" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 12 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -13, 0, -4 )
+material = SubResource( 2 )
+
+[node name="Wall16" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 12 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -13, 0, -2 )
+material = SubResource( 2 )
+
+[node name="Wall17" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 12 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -13, 0, 0 )
+material = SubResource( 2 )
+
+[node name="Wall18" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 12 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -13, 0, 2 )
+material = SubResource( 2 )
+
+[node name="Wall19" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 12 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -13, 0, 4 )
+material = SubResource( 2 )
+
+[node name="Wall20" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 12 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -13, 0, 6 )
+material = SubResource( 2 )
+
+[node name="Wall21" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 12 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -13, 0, 8 )
+material = SubResource( 2 )
+
+[node name="Wall22" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 12 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -13, 0, 10 )
+material = SubResource( 2 )
+
+[node name="Wall23" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 12 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -13, 0, 12 )
+material = SubResource( 2 )
+
+[node name="WallCorner" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 12 )
+material = SubResource( 3 )
+
+[node name="WallCorner2" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 5 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12, 0, -7 )
+material = SubResource( 3 )
+
+[node name="WallCorner3" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 5 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -13, 0, -6 )
+material = SubResource( 3 )
+
+[node name="WallCorner4" parent="Navigation/NavigationMeshInstance/Terrain/CSGCombiner/Walls" instance=ExtResource( 5 )]
+transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -12, 0, 13 )
+material = SubResource( 3 )
+
+[node name="ItemProviders" type="Spatial" parent="Navigation/NavigationMeshInstance/Terrain"]
+
+[node name="MeatCrate2" parent="Navigation/NavigationMeshInstance/Terrain/ItemProviders" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.77152 )
+
+[node name="RamenCrate2" parent="Navigation/NavigationMeshInstance/Terrain/ItemProviders" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.21312, 0, -5.92653 )
+
+[node name="WaterCrate" parent="Navigation/NavigationMeshInstance/Terrain/ItemProviders" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.6535, 0, -5.96079 )
+
+[node name="Shelves" type="Spatial" parent="Navigation/NavigationMeshInstance/Terrain"]
+
+[node name="Shelf" parent="Navigation/NavigationMeshInstance/Terrain/Shelves" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.436, 0.5, 3.995 )
+
+[node name="Shelf2" parent="Navigation/NavigationMeshInstance/Terrain/Shelves" instance=ExtResource( 4 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.436, 0.5, 3.995 )
+
+[node name="Shelf4" parent="Navigation/NavigationMeshInstance/Terrain/Shelves" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.564, 0.5, 3.995 )
+
+[node name="Shelf5" parent="Navigation/NavigationMeshInstance/Terrain/Shelves" instance=ExtResource( 4 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5.564, 0.5, 3.995 )
+
+[node name="Shelf6" parent="Navigation/NavigationMeshInstance/Terrain/Shelves" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.564, 0.5, 7.995 )
+broken = true
+
+[node name="Shelf7" parent="Navigation/NavigationMeshInstance/Terrain/Shelves" instance=ExtResource( 4 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5.564, 0.5, 7.995 )
+broken = true
+
+[node name="Shelf10" parent="Navigation/NavigationMeshInstance/Terrain/Shelves" instance=ExtResource( 4 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.436, 0.5, 7.995 )
+broken = true
+
+[node name="Shelf3" parent="Navigation/NavigationMeshInstance/Terrain/Shelves" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.436, 0.5, 7.995 )
+broken = true
+
+[node name="CheckoutArea" type="Spatial" parent="Navigation/NavigationMeshInstance/Terrain"]
+
+[node name="TableCheckoutMiddle" parent="Navigation/NavigationMeshInstance/Terrain/CheckoutArea" instance=ExtResource( 10 )]
+transform = Transform( -2.18557e-08, 0, -1, 0, 0.5, 0, 0.5, 0, -4.37114e-08, 0, 0, -1 )
+
+[node name="TableCheckoutMiddle2" parent="Navigation/NavigationMeshInstance/Terrain/CheckoutArea" instance=ExtResource( 10 )]
+transform = Transform( -2.18557e-08, 0, -1, 0, 0.5, 0, 0.5, 0, -4.37114e-08, -2, 0, -1 )
+
+[node name="TableCheckoutMiddle3" parent="Navigation/NavigationMeshInstance/Terrain/CheckoutArea" instance=ExtResource( 10 )]
+transform = Transform( -2.18557e-08, 0, -1, 0, 0.5, 0, 0.5, 0, -4.37114e-08, -4, 0, -1 )
+
+[node name="TableCheckoutMiddle4" parent="Navigation/NavigationMeshInstance/Terrain/CheckoutArea" instance=ExtResource( 10 )]
+transform = Transform( -2.18557e-08, 0, -1, 0, 0.5, 0, 0.5, 0, -4.37114e-08, -6, 0, -1 )
+
+[node name="TableCheckoutMiddle5" parent="Navigation/NavigationMeshInstance/Terrain/CheckoutArea" instance=ExtResource( 10 )]
+transform = Transform( -2.18557e-08, 0, -1, 0, 0.5, 0, 0.5, 0, -4.37114e-08, 2, 0, -1 )
+
+[node name="TableCheckoutMiddle6" parent="Navigation/NavigationMeshInstance/Terrain/CheckoutArea" instance=ExtResource( 10 )]
+transform = Transform( -2.18557e-08, 0, -1, 0, 0.5, 0, 0.5, 0, -4.37114e-08, 4, 0, -1 )
+
+[node name="TableCheckoutMiddle7" parent="Navigation/NavigationMeshInstance/Terrain/CheckoutArea" instance=ExtResource( 10 )]
+transform = Transform( -2.18557e-08, 0, -1, 0, 0.5, 0, 0.5, 0, -4.37114e-08, 6, 0, -1 )
+
+[node name="TableCheckoutMiddle8" parent="Navigation/NavigationMeshInstance/Terrain/CheckoutArea" instance=ExtResource( 10 )]
+transform = Transform( -2.18557e-08, 0, -1, 0, 0.5, 0, 0.5, 0, -4.37114e-08, 8, 0, -1 )
+
+[node name="TableCheckoutMiddle9" parent="Navigation/NavigationMeshInstance/Terrain/CheckoutArea" instance=ExtResource( 10 )]
+transform = Transform( -2.18557e-08, 0, -1, 0, 0.5, 0, 0.5, 0, -4.37114e-08, 10, 0, -1 )
+
+[node name="TableCheckoutMiddle10" parent="Navigation/NavigationMeshInstance/Terrain/CheckoutArea" instance=ExtResource( 10 )]
+transform = Transform( -2.18557e-08, 0, -1, 0, 0.5, 0, 0.5, 0, -4.37114e-08, 12, 0, -1 )
+
+[node name="Cashiers" type="Spatial" parent="."]
+
+[node name="Cashier" parent="Cashiers" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.53712, 1, -0.926797 )
+queue_path = NodePath("../../Queues/Queue")
+
+[node name="Cashier2" parent="Cashiers" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.87211, 1, -0.926797 )
+queue_path = NodePath("../../Queues/Queue2")
+
+[node name="Garbage" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9178, 0.509825, -4.55642 )
+
+[node name="Exit" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2074, 0, 14.3493 )
+
+[node name="Entrance" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.28848, 0, 11.2717 )
+
+[node name="Queues" type="Spatial" parent="."]
+
+[node name="Queue" parent="Queues" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.59683, 0, 0 )
+
+[node name="Queue2" parent="Queues" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.92174, 0, 0 )
+
+[node name="Outside" type="Spatial" parent="."]
+
+[node name="tree1" parent="Outside" instance=ExtResource( 14 )]
+transform = Transform( 1.96746, 0, -0.359287, 0, 2, 0, 0.359287, 0, 1.96746, -17.2273, 0, 0 )
+
+[node name="tree2" parent="Outside" instance=ExtResource( 14 )]
+transform = Transform( 1.74765, -0.161372, -0.958994, 0.141472, 1.99348, -0.0776305, 0.962131, 0, 1.75337, -15.8174, 0, 5.88385 )
+
+[node name="tree5" parent="Outside" instance=ExtResource( 14 )]
+transform = Transform( 0.894051, 0, -1.78904, 0, 2, 0, 1.78904, 0, 0.894051, 23.2326, 0, 0.611729 )
+
+[node name="tree6" parent="Outside" instance=ExtResource( 14 )]
+transform = Transform( 0.279994, -0.0968956, -1.97793, 0.141472, 1.99348, -0.0776305, 1.97524, -0.129043, 0.285935, 19.0916, 0.0339832, 5.18583 )
+
+[node name="tree7" parent="Outside" instance=ExtResource( 14 )]
+transform = Transform( 1.12603, 0.0973858, -1.65002, -0.0548948, 1.99763, 0.0804397, 1.65198, 0, 1.12737, 22.8985, -0.0777652, -6.11015 )
+
+[node name="tree8" parent="Outside" instance=ExtResource( 14 )]
+transform = Transform( 0.550311, -0.0162254, -1.92273, 0.114812, 1.99664, 0.0160118, 1.91937, -0.114782, 0.550317, 19.7082, 0.0777651, -0.971552 )
+
+[node name="tree9" parent="Outside" instance=ExtResource( 14 )]
+transform = Transform( -1.65946, 0, -1.11633, 0, 2, 0, 1.11633, 0, -1.65946, 10.8837, 0, -10.236 )
+
+[node name="tree10" parent="Outside" instance=ExtResource( 14 )]
+transform = Transform( -1.92295, 0.115536, -0.537496, 0.141472, 1.99348, -0.0776305, 0.531259, -0.11266, -1.92486, 5.81584, 0.0339832, -13.7555 )
+
+[node name="tree11" parent="Outside" instance=ExtResource( 14 )]
+transform = Transform( -1.49375, 0.0125024, -1.32987, -0.0548948, 1.99763, 0.0804397, 1.3288, 0.0965799, -1.49163, 17.5071, -0.0777652, -11.4303 )
+
+[node name="tree12" parent="Outside" instance=ExtResource( 14 )]
+transform = Transform( -1.83284, 0.11175, -0.792604, 0.114812, 1.99664, 0.0160118, 0.792166, -0.0308269, -1.83617, 12.0014, 0.0777651, -13.9345 )
+
+[node name="tree13" parent="Outside" instance=ExtResource( 14 )]
+transform = Transform( -0.874451, 0, -1.7987, 0, 2, 0, 1.7987, 0, -0.874451, -1.72601, 0, -10.0955 )
+
+[node name="tree14" parent="Outside" instance=ExtResource( 14 )]
+transform = Transform( -1.39612, 0.0433365, -1.43142, 0.141472, 1.99348, -0.0776305, 1.42507, -0.155444, -1.39463, -7.87597, 0.0339832, -10.5941 )
+
+[node name="tree15" parent="Outside" instance=ExtResource( 14 )]
+transform = Transform( -0.624456, 0.0593117, -1.89909, -0.0548948, 1.99763, 0.0804397, 1.89922, 0.0772406, -0.622087, 3.4019, -0.0777652, -14.4544 )
+
+[node name="tree16" parent="Outside" instance=ExtResource( 14 )]
+transform = Transform( -1.18717, 0.0811567, -1.6075, 0.114812, 1.99664, 0.0160118, 1.60544, -0.0827759, -1.18983, -2.61676, 0.0777651, -13.8551 )
+
+[node name="tree3" parent="Outside" instance=ExtResource( 14 )]
+transform = Transform( 1.39812, -0.129098, -0.767195, 0.113178, 1.59478, -0.0621044, 0.769705, 1.19209e-08, 1.4027, -18.5495, 1.90735e-06, 9.25066 )
+
+[node name="tree17" parent="Outside" instance=ExtResource( 14 )]
+transform = Transform( -1.54821, 0.124827, 0.383998, 0.113178, 1.59478, -0.0621044, -0.387592, -0.0329317, -1.55199, 14.9058, 1.90735e-06, 2.76356 )
+
+[node name="tree19" parent="Outside" instance=ExtResource( 14 )]
+transform = Transform( -0.741095, 0.107655, 1.41393, 0.113178, 1.59478, -0.0621044, -1.4135, 0.07125, -0.746294, -15.263, 1.90735e-06, -10.3567 )
+
+[node name="tree18" parent="Outside" instance=ExtResource( 14 )]
+transform = Transform( 0.763556, -0.133321, -1.39972, 0.124906, 1.59293, -0.0835871, 1.40049, -0.0693812, 0.770588, 14.9058, 1.90735e-06, -2.21232 )
+
+[node name="tree4" parent="Outside" instance=ExtResource( 14 )]
+transform = Transform( 1.01404, -0.119933, -1.23181, 0.113178, 1.59478, -0.0621044, 1.23245, -0.0477732, 1.01921, -14.768, 1.90735e-06, -3.33662 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Outside"]
+transform = Transform( 42.0802, 0, 0, 0, 20, 0, 0, 0, 38.6, 0, -1, 0 )
+mesh = SubResource( 7 )
+material/0 = SubResource( 8 )

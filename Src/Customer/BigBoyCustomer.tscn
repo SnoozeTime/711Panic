@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Src/Customer.tscn" type="PackedScene" id=1]
+
+[node name="BigBoyCustomer" instance=ExtResource( 1 )]
+speed = 2.5
+max_waiting_time = 10.0
+
+[node name="StateMachine" parent="." index="2"]
+initial_state = NodePath("../../BigBoyCustomer/StateMachine/EnterShop")
+
+[node name="obasan" parent="." index="3"]
+visible = false
